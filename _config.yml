@@ -1,4 +1,5 @@
 
+markdown: redcarpet
 permalink: /blog/:year/:month/:day/:categories/:title/
 
 defaults:

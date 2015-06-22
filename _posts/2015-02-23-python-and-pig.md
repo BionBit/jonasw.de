@@ -29,15 +29,15 @@ example than a contrived 'Hello, World!' example.
 My task was to create a datastructure with the following description
 (which, by the way, is the perfect format to _PUT_ data into HBase):
 
-{% highlight pig %}
+```pig
 mapped: {group: chararray,mappedTuple: map[]}
-{% endhighlight %}
+```
 
 However, the data I had from previous steps was of the form:
 
-{% highlight pig %}
+```pig
 topped: {group: chararray,result: {(x: chararray,y: double,z: chararray)}}
-{% endhighlight %}
+```
 
 The data in the inner bag is sorted. I wanted to have the tuples in result
 in a map with their position as key (with a prefix) and the values in the tuple
@@ -51,14 +51,14 @@ when we are used to Python 3 (Jython is 'still' in version 2.5.3).
 
 My first implementation is this:
 
-{%highlight python %}
+```python
 @outputSchema("mappedTuple:map[]")
 def rankToMapAndConcatExceptFirst(prefix, b):
   o = {}
   for i in enumerate(b):
     o[prefix + str(i[0])] = '\t'.join(map(unicode, i[1][1:]))
   return o
-{%endhighlight%}
+```
 
 Let's take a look at this step by step. The first line
 gives a hint to Pig what this function returns. This is important
@@ -88,16 +88,16 @@ using `unicode` the problems disappear.
 Back in Pig we want to use this brand new UDF. To do this we first have
 to `REGISTER` the file with the following command:
 
-{% highlight pig %}
+```pig
 REGISTER 'enumerate.py' USING jython AS e;
-{%endhighlight%}
+```
 
 We can then later invoke it with
 
-{% highlight pig %}
+```pig
 mapped = FOREACH topped
 	GENERATE group, e.rankToMapAndConcatExceptFirst('prefix-', result);
-{%endhighlight%}
+```
 
 and get the desired result.
 
@@ -107,12 +107,12 @@ If you are submitting the Pig script via Oozie you have to take care
 that the UDF is delivered with it. This can be achieved with
 a `file` tag such as:
 
-{% highlight xml %}
+```xml
 <pig>
 	...
 	<file>scripts/enumerate.py</file>
 </pig>
-{%endhighlight%}
+```
 
 Note that you can keep the UDF files in a separate directory, but Oozie will
 always deliver them to the current directory of your Pig job, so just
