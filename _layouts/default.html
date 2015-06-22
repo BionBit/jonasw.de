@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{page.title}}</title>
 
-		{% stylesheet pure %}
-		{% stylesheet grids %}
-		{% stylesheet syntax %}
-		{% stylesheet blog %}
+		<style>
+		{% asset 'inline.css' %}
+		</style>
+
 	</head>
 	<body>
 		<div id="layout" class="pure-g">
@@ -21,4 +21,8 @@
 		</div>
 
 	</body>
+	{% stylesheet pure %}
+	{% stylesheet grids %}
+	{% stylesheet syntax %}
+	{% stylesheet blog %}
 </html>

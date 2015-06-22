@@ -149,6 +149,11 @@ h3 {
 .footer .pure-menu {
 	text-align: left;
 }
+
+.footer .pure-menu .pure-menu-item {
+	padding: 0.3em;
+}
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
 	background: none;
