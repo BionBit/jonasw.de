@@ -1,0 +1,9 @@
+
+permalink: /blog/:year/:month/:day/:categories/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

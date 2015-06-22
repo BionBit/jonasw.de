@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog - Jonas Weber
+---
+
+<div>
+	<div class="posts">
+		<h1 class="content-subhead">Recent posts</h1>
+		{% for post in site.posts %}
+		<section class="post">
+			<header class="post-header">
+				<!-- avatar removed -->
+				<h2 class="post-title">
+					<a href="{{post.url}}">
+						{{post.title}}
+					</a>
+				</h2>
+				<p class="post-meta">
+				under {% for tag in post.categories %}<span class="post-category">{{tag}}</span> {%endfor%}
+				</p>
+			</header>
+
+			<div class="post-description">
+				{{post.excerpt}}
+				<a href="{{post.url}}">Read more</a>
+			</div>
+		</section>
+		{% endfor %}
+	</div>
+</div>
