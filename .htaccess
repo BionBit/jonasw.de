@@ -14,5 +14,5 @@ RewriteCond %{QUERY_STRING} resource=acct%3[aA](.+)
 RewriteRule ^.well-known/webfinger /profile/%1? [L]
 </IfModule>
 
-Header add Strict-Transport-Security "max-age=10886400"
-Header add Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'"
+Header set Strict-Transport-Security "max-age=10886400"
+Header set Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'"
