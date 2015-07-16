@@ -2,6 +2,10 @@
 markdown: redcarpet
 permalink: /blog/:year/:month/:day/:categories/:title/
 
+name: Jonas Webers Blog
+description: cat /dev/mind
+url: https://jonasw.de/
+
 defaults:
   - scope:
       path: ""
