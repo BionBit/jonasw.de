@@ -7,24 +7,38 @@ title: Blog - Jonas Weber
 	<div class="posts">
 		<h1 class="content-subhead">Recent posts</h1>
 		{% for post in site.posts %}
-		<section class="post">
-			<header class="post-header">
-				<!-- avatar removed -->
-				<h2 class="post-title">
-					<a href="{{post.url}}">
-						{{post.title}}
-					</a>
-				</h2>
-				<p class="post-meta">
-				under {% for tag in post.categories %}<span class="post-category">{{tag}}</span> {%endfor%}
-				</p>
-			</header>
+		{% if post.layout == "post" %}
+			<section class="post">
+				<header class="post-header">
+					<!-- avatar removed -->
+					<h2 class="post-title">
+						<a href="{{post.url}}">
+							{{post.title}}
+						</a>
+					</h2>
+					<p class="post-meta">
+					under {% for tag in post.categories %}<span class="post-category">{{tag}}</span> {%endfor%}
+					</p>
+				</header>
 
-			<div class="post-description">
-				{{post.excerpt}}
-				<a href="{{post.url}}">Read more</a>
-			</div>
-		</section>
+				<div class="post-description">
+					{{post.excerpt}}
+					<a href="{{post.url}}">Read more</a>
+				</div>
+			</section>
+		{% elsif post.layout == "reading-tip" %}
+			<section class="post">
+				<header class="post-header">
+					<h2 class="post-title">
+						Reading Tip: {{post.title}}
+					</h2>
+				</header>
+				<div class="post-description">
+					{{post.content}}
+				</div>
+				<a href="{{post.href}}" target="_blank">Go to external article</a>
+			</section>
+		{% endif %}
 		{% endfor %}
 	</div>
 </div>

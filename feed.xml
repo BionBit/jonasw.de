@@ -9,7 +9,11 @@
 		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts %}
 			<item>
-				<title>{{ post.title | xml_escape }}</title>
+				{% if post.layout == "reading-tip" %}
+					<title>Reading Tip: {{post.title | xml_escape }}</title>
+				{% else %}
+					<title>{{ post.title | xml_escape }}</title>
+				{% endif %}
 				{% if post.author.name %}
 					<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
 				{% endif %}        
@@ -19,7 +23,11 @@
 					<description>{{ post.content | xml_escape }}</description>
 				{% endif %}
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
+				{% if post.href %}
+				  <link>{{post.href}}</link>
+				{% else %}
+					<link>{{ site.url }}{{ post.url }}</link>
+				{% endif %}
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 			</item>
 		{% endfor %}
