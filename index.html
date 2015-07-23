@@ -6,7 +6,7 @@ title: Blog - Jonas Weber
 <div>
 	<div class="posts">
 		<h1 class="content-subhead">Recent posts</h1>
-		{% for post in site.posts %}
+		{% for post in paginator.posts %}
 		{% if post.layout == "post" %}
 			<section class="post">
 				<header class="post-header">
@@ -22,23 +22,41 @@ title: Blog - Jonas Weber
 				</header>
 
 				<div class="post-description">
-					{{post.excerpt}}
-					<a href="{{post.url}}">Read more</a>
+					{{post.content}}
 				</div>
 			</section>
 		{% elsif post.layout == "reading-tip" %}
 			<section class="post">
 				<header class="post-header">
 					<h2 class="post-title">
-						Reading Tip: {{post.title}}
+						<a href="{{post.href}}" target="_blank">
+							Reading Tip: {{post.title}}
+						</a>
 					</h2>
 				</header>
 				<div class="post-description">
 					{{post.content}}
 				</div>
-				<a href="{{post.href}}" target="_blank">Go to external article</a>
 			</section>
 		{% endif %}
 		{% endfor %}
+
+		{% if paginator.total_pages > 1 %}
+		<div class="pagination">
+			{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts</a>
+			{% else %}
+			<span>Older Posts</span>
+			{% endif %}
+
+			<a href="{{site.url}}">Home</a>
+
+			{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer Posts</a>
+			{% else %}
+			<span>Newer Posts</span>
+			{% endif %}
+		</div>
+		{% endif %}
 	</div>
 </div>

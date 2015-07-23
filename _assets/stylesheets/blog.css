@@ -176,3 +176,12 @@ blockquote {
 	padding: 1em;
 }
 
+.pagination {
+	text-align: center;
+	margin-bottom: 3em;
+}
+.pagination a, .pagination span {
+	display: inline-block;
+	margin-left: 10em;
+	margin-right: 10em;
+}
