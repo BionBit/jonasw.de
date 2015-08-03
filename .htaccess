@@ -16,3 +16,18 @@ RewriteRule ^.well-known/webfinger /profile/%1? [L]
 
 Header set Strict-Transport-Security "max-age=10886400"
 Header set Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'"
+
+
+AddEncoding gzip .gz
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{HTTP_USER_AGENT} !Konqueror
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)\.css $1.css.gz [QSA,L]
+<Files *.css.gz>
+	ForceType text/css
+</Files>
+</IfModule>
