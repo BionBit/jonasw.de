@@ -24,8 +24,10 @@
 		</div>
 
 	</body>
-	{% stylesheet pure %}
-	{% stylesheet grids %}
-	{% stylesheet syntax %}
-	{% stylesheet blog %}
+{% css_asset_tag global %}
+- /_assets/stylesheets/pure.css
+- /_assets/stylesheets/grids.css
+- /_assets/stylesheets/syntax.css
+- /_assets/stylesheets/blog.css
+{% endcss_asset_tag %}
 </html>
