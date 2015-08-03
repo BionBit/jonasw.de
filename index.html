@@ -42,19 +42,17 @@ title: Blog - Jonas Weber
 		{% endfor %}
 
 		{% if paginator.total_pages > 1 %}
-		<div class="pagination">
+		<div class="pagination pure-g">
 			{% if paginator.next_page %}
-			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts</a>
+			<a class="pure-u-1-3" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts</a>
 			{% else %}
-			<span>Older Posts</span>
+			<span class="pure-u-1-3">Older Posts</span>
 			{% endif %}
-
-			<a href="{{site.url}}">Home</a>
-
+			<a class="pure-u-1-3" href="{{site.url}}">Home</a>
 			{% if paginator.previous_page %}
-			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer Posts</a>
+			<a class="pure-u-1-3" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer Posts</a>
 			{% else %}
-			<span>Newer Posts</span>
+			<span class="pure-u-1-3">Newer Posts</span>
 			{% endif %}
 		</div>
 		{% endif %}
