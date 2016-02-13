@@ -1,5 +1,5 @@
 ---
-title: Can we isolate Units in the Browser or Anatomy of a Bug
+title: Can we isolate Units in the Browser? - Anatomy of a Bug
 categories: develop tdd
 ---
 
