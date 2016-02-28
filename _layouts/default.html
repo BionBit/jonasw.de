@@ -7,14 +7,15 @@
 		<title>{{page.title}}</title>
 
 		<link rel="shortcut icon" href="{% asset_path jw-small.jpg %}">
-		<style>
-			{% asset 'inline.css' %}
-		</style>
-
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
+				<div class="pull-right">
+					<p class="navbar-text">
+						<strong>cat</strong> <i>/dev/mind</i>
+					</p>
+				</div>
 				<div class="navbar-header">
 					<a href="{{site.url}}">
 						{% image jw-small.jpg style="height: 60px; border-radius: 100px; padding: 5px; float:left" alt="Photo of Jonas" %}

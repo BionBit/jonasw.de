@@ -7,6 +7,7 @@ for tag in $TAGS; do
 ---
 layout: tagpage
 tag: $tag
+title: posts under $tag
 ---
 
 EOFX
