@@ -101,6 +101,3 @@ DEPENDENCIES
   jekyll-asset-pipeline
   jekyll-assets
   yui-compressor
-
-BUNDLED WITH
-   1.10.6
