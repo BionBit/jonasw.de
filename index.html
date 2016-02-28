@@ -29,6 +29,9 @@ title: Blog - Jonas Weber
 				Reading Tip: {{post.title}}
 			</a>
 		</h4>
+		<p class="text-muted">
+		under {% for tag in post.categories %}<span class="label label-default">{{tag}}</span> {%endfor%}
+		</p>
 	</header>
 	{{post.excerpt}}
 	<a href="{{post.href}}" target="_blank">Read external article...</a>
