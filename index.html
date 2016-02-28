@@ -8,11 +8,11 @@ title: Blog - Jonas Weber
 <section class="post">
 	<header class="post-header">
 		<!-- avatar removed -->
-		<strong class="post-title">
+		<h4 class="post-title">
 			<a href="{{post.url}}">
 				{{post.title}}
 			</a>
-		</strong>
+		</h4>
 		<p class="text-muted">
 		under {% for tag in post.categories %}<span class="label label-default">{{tag}}</span> {%endfor%}
 		</p>
@@ -24,11 +24,11 @@ title: Blog - Jonas Weber
 {% elsif post.layout == "reading-tip" %}
 <section class="post">
 	<header class="post-header">
-		<strong>
+		<h4>
 			<a href="{{post.href}}" target="_blank">
 				Reading Tip: {{post.title}}
 			</a>
-		</strong>
+		</h4>
 	</header>
 	{{post.excerpt}}
 	<a href="{{post.href}}" target="_blank">Read external article...</a>
