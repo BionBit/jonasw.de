@@ -9,7 +9,7 @@ layout: default
 	{% if page.author %}
 	by: <a href="{{page.author.href}}">{{page.author.name}}</a>
 	{% endif %}
-	under {% for tag in post.categories %}<a href="/tags/{{tag}}/"><span class="label label-default">{{tag}}</span></a> {%endfor%}
+	under {% for tag in page.categories %}<a href="/tags/{{tag}}/"><span class="label label-default">{{tag}}</span></a> {%endfor%}
 </p>
 
 {{content}}
