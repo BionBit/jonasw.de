@@ -12,4 +12,14 @@ layout: default
 	under {% for tag in page.categories %}<a href="/tags/{{tag}}/"><span class="label label-default">{{tag}}</span></a> {%endfor%}
 </p>
 
+{% if page.notice %}
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		{{page.notice}}
+	</div>
+</div>
+
+{% endif %}
+
 {{content}}
