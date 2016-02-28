@@ -7,16 +7,8 @@
 		<title>{{page.title}}</title>
 
 		<link rel="shortcut icon" href="{% asset_path jw-small.jpg %}">
-{% css_asset_tag global %}
-- /_assets/stylesheets/bootstrap.min.css
-- /_assets/stylesheets/syntax.css
-{% endcss_asset_tag %}
-{% css_asset_tag fa %}
-- /_assets/stylesheets/font-awesome.css
-{% endcss_asset_tag %}
 		<style>
-			strong a, strong a:hover, strong a:focus { color: #000; font-size: 1.2em; }
-			section.post { margin-top: 3em; margin-bottom: 3em; }
+			{% asset 'inline.css' %}
 		</style>
 
 	</head>
@@ -66,4 +58,13 @@
 			</div>
 		</footer>
 	</body>
+{% css_asset_tag global %}
+- /_assets/stylesheets/bootstrap.min.css
+- /_assets/stylesheets/syntax.css
+- /_assets/stylesheets/custom.css
+{% endcss_asset_tag %}
+{% css_asset_tag fa %}
+- /_assets/stylesheets/font-awesome.css
+{% endcss_asset_tag %}
+
 </html>
