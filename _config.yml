@@ -2,7 +2,7 @@
 markdown: redcarpet
 permalink: /blog/:year/:month/:day/:categories/:title/
 
-paginate: 3
+paginate: 7
 paginate_path: "/blog/page:num/"
 
 name: Jonas Webers Blog

@@ -6,28 +6,64 @@
 		<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 		<title>{{page.title}}</title>
 
-		<style>
-		{% asset 'inline.css' %}
-		</style>
-
 		<link rel="shortcut icon" href="{% asset_path jw-small.jpg %}">
+{% css_asset_tag global %}
+- /_assets/stylesheets/bootstrap.min.css
+- /_assets/stylesheets/syntax.css
+{% endcss_asset_tag %}
+{% css_asset_tag fa %}
+- /_assets/stylesheets/font-awesome.css
+{% endcss_asset_tag %}
+		<style>
+			strong a, strong a:hover, strong a:focus { color: #000; font-size: 1.2em; }
+			section.post { margin-top: 3em; margin-bottom: 3em; }
+		</style>
 
 	</head>
 	<body>
-		<div id="layout" class="pure-g">
-			<div class="sidebar pure-u-1 pure-u-md-1-4">
-				{% include sidebar.html %}
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					{% image jw-small.jpg style="height: 60px; border-radius: 100px; padding: 5px; float:left" alt="Photo of Jonas" %}
+					<a class="navbar-brand" href="{{site.url}}">
+						Jonas Weber
+					</a>
+				</div>
 			</div>
-			<div class="content pure-u-1 pure-u-md-3-4">
-				{{ content }}
-			</div>
+		</nav>
+		<div class="container">
+			{{content}}
 		</div>
 
+		<footer style="margin-top: 3em; border-top: 1px solid #eee; margin-bottom: 2em">
+			<div class="container">
+				<ul class="nav nav-pills pull-right" style="margin-top: 0.2em">
+					<li>
+						<a href="http://twitter.com/thriqon/">
+							<i class="fa fa-twitter"></i>
+							Twitter
+						</a>
+					</li>
+					<li>
+						<a href="http://github.com/thriqon/">
+							<i class="fa fa-github"></i>
+							GitHub
+						</a>
+					</li>
+					<li>
+						<a href="mailto:contact@jonasw.de">
+							<i class="fa fa-envelope"></i>
+							contact@jonasw.de
+						</a>
+					</li>
+					<li>
+						<a href="{{site.url}}feed.xml">
+							<i class="fa fa-rss"></i>
+							RSS
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
 	</body>
-{% css_asset_tag global %}
-- /_assets/stylesheets/pure.css
-- /_assets/stylesheets/grids.css
-- /_assets/stylesheets/syntax.css
-- /_assets/stylesheets/blog.css
-{% endcss_asset_tag %}
 </html>
