@@ -1,73 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html amp lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
-		<title>{{page.title}}</title>
-
-		<link rel="shortcut icon" href="{% asset_path jw-small.jpg %}">
+    {% include head.html %}
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container">
-				<div class="pull-right">
-					<p class="navbar-text">
-						<strong>cat</strong> <em>/dev/mind</em>
-					</p>
-				</div>
-				<div class="navbar-header">
-					<a href="{{site.url}}">
-						{% image jw-small.jpg style="height: 60px; border-radius: 100px; padding: 5px; float:left" alt="" %}
-					</a>
-					<a class="navbar-brand" href="{{site.url}}" style="background-color: transparent">
-						Jonas Weber
-					</a>
-				</div>
+		<nav class="navbar">
+			<div class="box">
+        <div class="motto">
+          <span class="kd">cat</span> <span class="nx">/dev/mind</span>
+        </div>
+
+        <a href="{{site.url}}">
+          <amp-img src="/assets/jw-small.jpg" height="50" width="50"></amp-img>
+          <noscript>
+            <img src="/assets/jw-small.jpg" height="50" width="50">
+          </noscript>
+        </a>
+        <a href="{{site.url}}">
+          <span class="name">Jonas Weber</span>
+        </a>
 			</div>
 		</nav>
-		<div class="container">
+		<div class="box">
 			{{content}}
 		</div>
 
-		<footer style="margin-top: 3em; border-top: 1px solid #eee; margin-bottom: 2em">
-			<div class="container">
-				<ul class="nav nav-pills" style="margin-top: 0.2em">
-					<li>
-						<a href="http://github.com/thriqon/">
-							<span class="fa fa-github"></span>
-							GitHub
-						</a>
-					</li>
-					<li>
-						<a href="http://twitter.com/thriqon/">
-							<span class="fa fa-twitter"></span>
-							Twitter
-						</a>
-					</li>
-					<li>
-						<a href="mailto:contact@jonasw.de">
-							<span class="fa fa-envelope"></span>
-							contact@jonasw.de
-						</a>
-					</li>
-					<li>
-						<a href="{{site.url}}feed.xml">
-							<span class="fa fa-rss"></span>
-							RSS
-						</a>
-					</li>
-				</ul>
-			</div>
+		<footer class="box">
+      <ul class="horizontal">
+        <li>
+          <a href="http://github.com/thriqon/">
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com/thriqon/">
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a href="mailto:contact@jonasw.de">
+            contact@jonasw.de
+          </a>
+        </li>
+        <li>
+          <a href="{{site.url}}feed.xml">
+            RSS
+          </a>
+        </li>
+      </ul>
 		</footer>
 	</body>
-{% css_asset_tag global %}
-- /_assets/stylesheets/bootstrap.min.css
-- /_assets/stylesheets/syntax.css
-- /_assets/stylesheets/custom.css
-{% endcss_asset_tag %}
-{% css_asset_tag fa %}
-- /_assets/stylesheets/font-awesome.css
-{% endcss_asset_tag %}
-
 </html>

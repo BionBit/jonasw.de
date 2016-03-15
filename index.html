@@ -8,7 +8,7 @@ title: Blog - Jonas Weber
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-<ul style="margin-top: 3em" class="pager">
+<ul class="pager horizontal">
 	{% if paginator.next_page %}
 		<li class="previous">
 			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Older Posts</a>

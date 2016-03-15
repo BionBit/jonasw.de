@@ -15,6 +15,3 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-
-asset_pipeline:
-  gzip: true

@@ -1,0 +1,155 @@
+
+$primary-color-dark:   #D32F2F;
+$primary-color:        #F44336;
+$primary-color-light:  #FFCDD2;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #CDDC39;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+.post-meta {
+  color: $secondary-text-color;
+}
+
+.label {
+  background-color: $primary-color-dark;
+  color: $primary-color-text;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+html p, html ol, html ul {
+  font-family: serif;
+}
+
+html p:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.highlight {
+  border-radius: 5px;
+  border: 1px solid $divider-color;
+  padding: 0.5rem;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  font-weight: 100;
+  color: $primary-color;
+}
+
+nav.navbar {
+  border-bottom: 1px solid $divider-color;
+  min-height: 70px;
+}
+
+.box {
+  padding-left: 20px;
+  padding-right: 60px;
+}
+
+@media (min-width: 1260px) {
+  .box {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+  }
+}
+
+.motto {
+  float: right;
+}
+
+.motto {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .motto {
+    display: inherit;
+  }
+}
+
+.motto, .name {
+  font-size: 1.4em;
+  line-height: 70px;
+}
+
+.name {
+  margin-left: 2rem;
+}
+
+nav.navbar a, nav.navbar a:hover, nav.navbar a:focus {
+  color: $primary-text-color;
+  font-weight: 700;
+}
+
+h4 a, h4 a:hover, h4 a:focus { color: #000; font-size: 1.2em; }
+section.post { margin-top: 3em; margin-bottom: 3em; }
+
+nav.navbar a noscript img, nav.navbar a amp-img {
+  height: 60px;
+  width: 60px;
+  margin-top: 5px;
+  border-radius: 100px;
+  float: left;
+}
+
+footer {
+  margin-top: 3em;
+  border-top: 1px solid $divider-color;
+  margin-bottom: 2em;
+  padding-top: 0.2em;
+}
+
+ul.horizontal {
+  list-style-type: none;
+}
+ul.horizontal li {
+  display: inline-block;
+  margin-left: 4em;
+}
+
+blockquote {
+  border-left: 5px solid $secondary-text-color;
+  margin-left: 2em;
+  padding-left: 1em;
+}
+
+.pager {
+  text-align: center;
+  margin-left: 0px;
+  padding: 0;
+  margin-top: 3em;
+}
+
+ul.pager li.next, ul.pager li.previous {
+  margin-left: 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid $divider-color;
+}
+ul.pager li.next {
+ float: right; 
+}
+
+ul.pager li.previous {
+  float: left;
+}
+
+ul.pager li.disabled {
+  opacity: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $divider-color;
+}
