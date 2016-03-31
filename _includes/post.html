@@ -17,7 +17,9 @@
 		</p>
 	</header>
 
-	{{post.excerpt}}
+  <p>
+    {{post.excerpt | strip_html}}
+  </p>
 	<a href="{{post.url}}">Read more...</a>
 </section>
 {% elsif post.layout == "reading-tip" %}
@@ -33,7 +35,9 @@
 		under {% for tag in post.categories %}<a href="/tags/{{tag}}/"><span class="label label-default">{{tag}}</span></a> {%endfor%}
 		</p>
 	</header>
-	{{post.excerpt}}
+  <p>
+    {{post.excerpt | strip_html}}
+  </p>
 	<a href="{{post.href}}" target="_blank">Read external article...</a>
 </section>
 {% endif %}
