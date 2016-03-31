@@ -5,11 +5,11 @@ layout: default
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
-  "@type": "NewsArticle",
+  "@type": "BlogPosting",
   "mainEntityOfPage": "{{site.url}}{{page.path}}",
   "headline": "{{page.title}}",
   "datePublished": "{{page.date | date_to_xmlschema }}",
-  "description": "{{page.excerpt}}",
+  "description": "{{page.excerpt | strip_html}}",
   "author": {
     "@type": "Person",
     {% if page.author %}
@@ -34,10 +34,8 @@ layout: default
 
 {% if page.notice %}
 
-<div class="panel panel-default">
-	<div class="panel-body">
-		{{page.notice}}
-	</div>
+<div class="highlight">
+  {{page.notice}}
 </div>
 
 {% endif %}
