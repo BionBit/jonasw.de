@@ -15,10 +15,7 @@ frontend tests. In our case, there were two, and they seemed to be as unrelated
 as possible.  Funnily enough, this happened not every time, but only now and
 then, like this:
 
-<amp-img src="/assets/e7c336dc-410a-11e5-9776-85e35eb229fd.png" alt="Test Failure" height="93" width="733" />
-<noscript>
-  <img src="/assets/e7c336dc-410a-11e5-9776-85e35eb229fd.png" alt="Test Failure" height="93" width="733" />
-</noscript>
+<img src="/assets/e7c336dc-410a-11e5-9776-85e35eb229fd.png" alt="Test Failure" height="93" width="733" />
 
 Once good, once failure. *Exactly* once good, once failure. And the two of them
 always yielded the same result.
