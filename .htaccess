@@ -15,4 +15,4 @@ RewriteRule ^.well-known/webfinger /profile/%1? [L]
 </IfModule>
 
 Header set Strict-Transport-Security "max-age=10886400"
-Header set Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'"
+Header set Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline' https://assets-cdn.github.com; img-src 'self'; font-src 'self'; script-src https://gist.github.com"
