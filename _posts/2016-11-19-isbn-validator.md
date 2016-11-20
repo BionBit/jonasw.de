@@ -31,9 +31,9 @@ import Data.Char (isDigit, digitToInt, intToDigit)
 ```
 
 In the spirit of Test Driven Development we first define a set of `String`s
-that either are valid ISBNS (with correct length and control digit), or are not
+that either are valid ISBNs (with correct length and control digit), or are not
 valid. After the implementation we will know that the algorithm behaves
-correctly at least in these cases.
+correctly in at least these cases.
 
 ```haskell
 test1 =       isValid "0136091814"
