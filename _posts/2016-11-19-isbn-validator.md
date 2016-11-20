@@ -4,7 +4,7 @@ categories: develop haskell
 ---
 
 
-ISBNs (International Standard Book Numbers) are a standardized way to identity
+ISBNs (International Standard Book Numbers) are a standardized way to identify
 books internationally. Historically, they consisted of *ten* digits, with nine
 of them identifying the book and one serving as control digit. The presence of
 a control digit ensures (to some extent) that the buyer receives the book she
